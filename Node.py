@@ -1,17 +1,16 @@
+import pygame
 from consts import *
 from GUI import *
 
 
 class Node:
-    def __init__(self, row, col, node_size, total_rows):
+    def __init__(self, row, col):
         self.row = row
         self.col = col
-        self.x = row * WIDTH
-        self.y = col * HEIGHT
+        self.x = row * NODE_SIZE
+        self.y = col * NODE_SIZE
         self.color = WHITE
         self.neighbors = []
-        self.node_size = node_size
-        self.total_rows = total_rows
 
     def get_pos(self):
         return self.row, self.col
@@ -55,31 +54,29 @@ class Node:
     def update_neighbors(self, grid):
         pass
 
-    def draw_node(self, win: window):
-        pygame.draw.rect(win, self.color, (self.x, self.y, self.node_size, self.node_size))
+    def draw_node(self):
+        pygame.draw.rect(window, self.color, (self.x, self.y, NODE_SIZE, NODE_SIZE))
 
     def __lt__(self, other):
         return False
 
 
-def h_func(p1, p2):
-    x1, y1 = p1
-    x2, y2 = p2
+def heuristic_function(n1, n2):
+    x1, y1 = n1
+    x2, y2 = n2
     return abs(x1 - x2) + abs(y1 - y2)
 
 
-def create_list_of_nodes(rows, width):
+def create_list_of_nodes():
     grid = []
-    gap = width // rows
 
-    for i in range(rows):
+    for i in range(NUMBER_OF_NODES_IN_A_ROW):
         grid.append([])
-        for j in range(rows):
-            node = Node(i, j, gap, rows)
+        for j in range(NUMBER_OF_NODES_IN_A_ROW):
+            node = Node(i, j)
             grid[i].append(node)
 
     return grid
-
 
 
 

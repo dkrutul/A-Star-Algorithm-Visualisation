@@ -1,8 +1,11 @@
-#screen size
+# screen size
 WIDTH = 800
 HEIGHT = 800
+NUMBER_OF_NODES_IN_A_ROW = 50
+NODE_SIZE = WIDTH // NUMBER_OF_NODES_IN_A_ROW
+# I assume that, WIDTH == HEIGHT
 
-#colors
+# colors
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 255, 0)
