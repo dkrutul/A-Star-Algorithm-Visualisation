@@ -1,6 +1,5 @@
 import pygame
 from consts import *
-from GUI import *
 
 
 class Node:
@@ -54,7 +53,7 @@ class Node:
     def update_neighbors(self, grid):
         pass
 
-    def draw_node(self):
+    def draw_node(self, window):
         pygame.draw.rect(window, self.color, (self.x, self.y, NODE_SIZE, NODE_SIZE))
 
     def __lt__(self, other):
@@ -77,6 +76,21 @@ def create_list_of_nodes():
             grid[i].append(node)
 
     return grid
+
+
+def get_clicked_pos(pos):
+    y, x = pos
+
+    row = y // NODE_SIZE
+    col = x // NODE_SIZE
+
+    return row, col
+
+
+
+
+
+
 
 
 

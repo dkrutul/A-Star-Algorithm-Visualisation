@@ -1,18 +1,18 @@
-# screen size
+# Screen size:
 WIDTH = 800
 HEIGHT = 800
 NUMBER_OF_NODES_IN_A_ROW = 50
 NODE_SIZE = WIDTH // NUMBER_OF_NODES_IN_A_ROW
-# I assume that, WIDTH == HEIGHT
 
-# colors
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
+
+# Colors:
+RED = (255, 0, 0)                                   # Node has been checked
+GREEN = (0, 255, 0)                                 # Node is in Queue and is being checked
 BLUE = (0, 255, 0)
 YELLOW = (255, 255, 0)
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-PURPLE = (128, 0, 128)
-ORANGE = (255, 165, 0)
-GREY = (128, 128, 128)
-TURQUOISE = (64, 224, 208)
+WHITE = (255, 255, 255)                             # Not visited Node
+BLACK = (0, 0, 0)                                   # Wall Node
+PURPLE = (128, 0, 128)                              # Found path
+ORANGE = (255, 165, 0)                              # Start Node
+GREY = (128, 128, 128)                              # Lines of the grid
+TURQUOISE = (64, 224, 208)                          # End Node
