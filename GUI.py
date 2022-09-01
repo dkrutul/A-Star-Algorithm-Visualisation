@@ -67,6 +67,12 @@ def main():
                     end = None
                 node.set_reset_color()
 
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE and not started:
+                    for row in main_grid:
+                        for node in row:
+                            node.update_neighbors(main_grid)
+
     pygame.quit()
 
 

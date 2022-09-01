@@ -51,7 +51,19 @@ class Node:
         self.color = PURPLE
 
     def update_neighbors(self, grid):
-        pass
+        self.neighbors = []  # Clear at first and check for new
+
+        if self.row < NUMBER_OF_NODES_IN_A_ROW - 1 and not grid[self.row + 1][self.col].is_wall():  # DOWN
+            self.neighbors.append(grid[self.row + 1][self.col])
+
+        if self.row > 0 and not grid[self.row - 1][self.col].is_wall():  # UP
+            self.neighbors.append(grid[self.row - 1][self.col])
+
+        if self.col < NUMBER_OF_NODES_IN_A_ROW - 1 and not grid[self.row][self.col + 1].is_wall():  # RIGHT
+            self.neighbors.append(grid[self.row][self.col + 1])
+
+        if self.col > 0 and not grid[self.row][self.col - 1].is_wall():  # LEFT
+            self.neighbors.append(grid[self.row][self.col - 1])
 
     def draw_node(self, window):
         pygame.draw.rect(window, self.color, (self.x, self.y, NODE_SIZE, NODE_SIZE))
@@ -85,16 +97,3 @@ def get_clicked_pos(pos):
     col = x // NODE_SIZE
 
     return row, col
-
-
-
-
-
-
-
-
-
-
-
-
-
