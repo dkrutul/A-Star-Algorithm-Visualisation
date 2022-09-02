@@ -1,7 +1,7 @@
 import pygame
-
 from consts import *
 from Node import *
+from algorithm import *
 
 window = pygame.display.set_mode((HEIGHT, WIDTH))
 pygame.display.set_caption("A* Algorithm Visualisation")
@@ -72,6 +72,14 @@ def main():
                     for row in main_grid:
                         for node in row:
                             node.update_neighbors(main_grid)
+
+                    a_star_alg(lambda: draw(main_grid), main_grid, start, end)
+
+                if event.key is pygame.K_c:
+                    start = None
+                    end = None
+                    started = False
+                    main_grid = create_list_of_nodes()
 
     pygame.quit()
 
