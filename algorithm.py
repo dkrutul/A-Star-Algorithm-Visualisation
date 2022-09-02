@@ -58,11 +58,3 @@ def a_star_alg(draw_alg, grid, start, end):
             current.set_checked()
 
     return False
-
-
-
-
-
-
-
-

@@ -14,3 +14,4 @@ PURPLE = (128, 0, 128)                              # Found path
 ORANGE = (255, 165, 0)                              # Start Node
 GREY = (128, 128, 128)                              # Lines of the grid
 TURQUOISE = (64, 224, 208)                          # End Node
+
